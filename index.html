@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frieren Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="./frieren.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="login-box" id="loginBox">
+        <form id="loginForm">
+            <h2>Login</h2>
+
+            <div class="user-box">
+                <input type="text" id="username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="user-box">
+                <input type="password" id="password" required>
+                <label>Password</label>
+            </div>
+
+            <div class="remember">
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Login
+            </button>
+        </form>
+    </div>
+
+    <div class="members-page" id="membersPage">
+
+        <h1>Our Group Members</h1>
+        <p class="subtitle">Meet the people behind our project</p>
+
+        <div class="members-container">
+
+            <div class="member-card">
+                <img src="https://placehold.co/300x300/829ee8/ffffff?text=JD" alt="JD">
+                <h3>JD</h3>
+                <p>Group Member</p>
+            </div>
+
+            <div class="member-card">
+                <img src="https://placehold.co/300x300/829ee8/ffffff?text=Ivan" alt="Ivan">
+                <h3>Ivan</h3>
+                <p>Group Member</p>
+            </div>
+
+            <div class="member-card">
+                <img src="https://placehold.co/300x300/829ee8/ffffff?text=Patrick" alt="Patrick">
+                <h3>Patrick</h3>
+                <p>Group Member</p>
+            </div>
+
+            <div class="member-card">
+                <img src="https://placehold.co/300x300/829ee8/ffffff?text=Jefferson" alt="Jefferson">
+                <h3>Jefferson</h3>
+                <p>Group Member</p>
+            </div>
+
+        </div>
+
+        <button class="submit-btn logout-btn" onclick="logout()">
+            Log out
+        </button>
+
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const loginBox = document.getElementById("loginBox");
+        const membersPage = document.getElementById("membersPage");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            loginBox.style.display = "none";
+            membersPage.style.display = "block";
+        });
+
+        function logout() {
+            membersPage.style.display = "none";
+            loginBox.style.display = "block";
+            loginForm.reset();
+        }
+    </script>
+
+</body>
+</html>
